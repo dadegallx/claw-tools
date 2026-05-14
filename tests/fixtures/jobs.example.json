@@ -1,0 +1,12 @@
+{
+  "jobs": [
+    {
+      "name": "daily-budget",
+      "cron": "57 8 * * *",
+      "prompt": "Pull yesterday's transactions from Lunch Money. List uncategorized. DM the summary via the Telegram MCP.",
+      "model": "haiku",
+      "mcps": ["telegram", "lunch-money"],
+      "max_budget_usd": 0.30
+    }
+  ]
+}
