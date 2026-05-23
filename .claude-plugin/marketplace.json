@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claw-cron",
+  "description": "Cron-driven channel plugins for Claude Code.",
+  "owner": {
+    "name": "Davide Gallo",
+    "email": "davide@hey.com"
+  },
+  "plugins": [
+    {
+      "name": "scheduler",
+      "description": "Scheduler channel for Claude Code — emits cron-driven events into a running session. Define recurring jobs in jobs.json, each fires as a subprocess and reports back as a <channel> event. Manage via /scheduler:add, /scheduler:list, /scheduler:remove, /scheduler:run.",
+      "category": "productivity",
+      "source": "./scheduler"
+    }
+  ]
+}

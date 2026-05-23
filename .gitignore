@@ -1,6 +1,5 @@
-node_modules/
-.env
-.env.local
-*.log
+__pycache__/
+*.py[cod]
+.pytest_cache/
 .DS_Store
-bun.lock.tmp
+.claude/
