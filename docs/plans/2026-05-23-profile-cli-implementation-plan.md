@@ -4,7 +4,7 @@
 
 **Goal:** Build and install a working `claw` CLI that manages Claude Code Telegram assistant profiles without changing the current running Telegram assistant.
 
-**Architecture:** Use a small Python stdlib CLI at the claw-tools root. Store intended profile state in `~/.claude/claw/profiles.json` and per-profile directories under `~/.claude/claw/profiles/<name>/`. Detect live Claude/tmux runtimes read-only via `ps` and `tmux`; auto-surface the current Telegram assistant as `main` even before registry migration. Tests run against a temporary `CLAW_HOME` so real Claude data is never touched.
+**Architecture:** Use a small Python stdlib CLI at the claw-dash root. Store intended profile state in `~/.claude/claw/profiles.json` and per-profile directories under `~/.claude/claw/profiles/<name>/`. Detect live Claude/tmux runtimes read-only via `ps` and `tmux`; auto-surface the current Telegram assistant as `main` even before registry migration. Tests run against a temporary `CLAW_HOME` so real Claude data is never touched.
 
 **Tech Stack:** Python 3 stdlib (`argparse`, `json`, `pathlib`, `subprocess`, `uuid`, `shutil`), pytest-compatible unittest tests, tmux/ps for runtime discovery, shell wrapper installed to `~/.local/bin/claw`.
 
@@ -45,7 +45,7 @@ Aliases/compatibility:
 ## File layout to create
 
 ```text
-/Users/davide/Tools/claw-tools/
+/Users/davide/Tools/claw-dash/
   claw/
     __init__.py
     __main__.py
@@ -305,7 +305,7 @@ Expected: PASS.
 
 ```sh
 #!/usr/bin/env bash
-exec python3 /Users/davide/Tools/claw-tools/claw/cli.py "$@"
+exec python3 /Users/davide/Tools/claw-dash/claw/cli.py "$@"
 ```
 
 **Step 2: Run all tests**
@@ -319,7 +319,7 @@ Expected: PASS.
 **Step 3: Install**
 
 ```sh
-bash /Users/davide/Tools/claw-tools/install.sh
+bash /Users/davide/Tools/claw-dash/install.sh
 command -v claw
 claw --help
 ```

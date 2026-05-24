@@ -36,8 +36,8 @@ cd ~/Projects/scheduler && bun install
 Channel plugins are installed through marketplaces. Create a tiny wrapper next to the plugin:
 
 ```sh
-mkdir -p ~/Tools/claw-tools/.claude-plugin
-cat > ~/Tools/claw-tools/.claude-plugin/marketplace.json <<'JSON'
+mkdir -p ~/Tools/claw-dash/.claude-plugin
+cat > ~/Tools/claw-dash/.claude-plugin/marketplace.json <<'JSON'
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "claw-cron",
@@ -53,7 +53,7 @@ cat > ~/Tools/claw-tools/.claude-plugin/marketplace.json <<'JSON'
   ]
 }
 JSON
-ln -s ~/Projects/scheduler ~/Tools/claw-tools/scheduler
+ln -s ~/Projects/scheduler ~/Tools/claw-dash/scheduler
 ```
 
 ### 3. Install the plugin
@@ -61,7 +61,7 @@ ln -s ~/Projects/scheduler ~/Tools/claw-tools/scheduler
 In a Claude Code session:
 
 ```
-/plugin marketplace add /Users/<you>/Tools/claw-tools
+/plugin marketplace add /Users/<you>/Tools/claw-dash
 /plugin install scheduler@claw-cron
 ```
 
@@ -184,7 +184,7 @@ If a subprocess hits the cap it exits with `error_max_budget_usd` and the channe
 
 **"Subprocess fails with `error_max_budget_usd`."** Cold-cache costs run ~$0.10+ even for trivial prompts. Bump `max_budget_usd` to 0.30 or higher.
 
-**"`/plugin install` says 'source type not supported'."** Plugin sources must be subdirectories of their marketplace, not the marketplace itself. The install snippet above wraps the plugin in `~/Tools/claw-tools/` with a symlink to keep the plugin's own repo intact.
+**"`/plugin install` says 'source type not supported'."** Plugin sources must be subdirectories of their marketplace, not the marketplace itself. The install snippet above wraps the plugin in `~/Tools/claw-dash/` with a symlink to keep the plugin's own repo intact.
 
 **"Channel events don't appear in `claude --print` output."** Known limitation in 2.1.141 — channel notifications aren't flushed to `--print` stdout. Verify with an interactive session instead.
 

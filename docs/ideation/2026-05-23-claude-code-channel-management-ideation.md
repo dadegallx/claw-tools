@@ -22,7 +22,7 @@ Do not start with a full router daemon. It is the interesting long-term architec
 
 ## Grounding context
 
-- Strategy anchor: `STRATEGY.md` defines claw-tools as thin assistant glue around Claude Code, not a replacement. Success signals are understandable state, low-friction context creation, and recoverable operation.
+- Strategy anchor: `STRATEGY.md` defines claw-dash as thin assistant glue around Claude Code, not a replacement. Success signals are understandable state, low-friction context creation, and recoverable operation.
 - Repo/product context: `scheduler/README.md` already implements one missing assistant primitive: cron events into a running Claude Code session plus `claude -p` subprocesses for scheduled work. It stores state under `~/.claude/channels/scheduler/`, with `jobs.json`, logs, locks, and slash commands for configure/add/list/remove/run.
 - User/request context: Davide has a personal upload assistant on Telegram and wants to add new contexts like a diet channel, Telegram topic, or Discord channel without manually managing persistent Claude Code sessions.
 - External context: Claude Code channels push external events into a running session via MCP server capability `experimental['claude/channel']`; events arrive as `<channel source="...">` blocks with metadata. Reply tools route back using identifiers like `chat_id`.

@@ -586,7 +586,7 @@ Warning example:
 Warning: profile launch expects plugin:telegram@claude-plugins-official to be installed.
 If launch fails, start Claude manually and run:
   /plugin install telegram@claude-plugins-official
-  /plugin marketplace add /Users/davide/Tools/claw-tools
+  /plugin marketplace add /Users/davide/Tools/claw-dash
   /plugin install scheduler@claw-cron
 ```
 

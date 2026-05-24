@@ -1,9 +1,9 @@
 ---
-name: claw-tools
-last_updated: 2026-05-23
+name: claw-dash
+last_updated: 2026-05-24
 ---
 
-# claw-tools Strategy
+# claw-dash Strategy
 
 ## Target problem
 
@@ -11,9 +11,9 @@ Claude Code has many of the primitives for a capable local assistant, but its se
 
 ## Our approach
 
-Use Claude Code as the execution engine and source of agent capabilities, then build the thin personal-assistant layer around it. This repo owns the glue Claude Code is missing for assistant use: session/channel management, scheduling, visibility, and operational control, without rebuilding Claude Code itself or cloning all of OpenClaw.
+Use Claude Code as the execution engine and source of agent capabilities, then build the thin personal-assistant layer around it. claw-dash owns the glue Claude Code is missing for assistant use: session/channel management, scheduling, visibility, and operational control, without rebuilding Claude Code itself or cloning all of OpenClaw.
 
-OpenClaw is the reference shape: a local, persistent personal AI assistant that can be reached from chat apps, remember context, run tools, browse, use the shell, and perform background work. claw-tools aims for the useful subset of that experience that can be unlocked by enhancing Claude Code instead of replacing it.
+OpenClaw is the reference shape: a local, persistent personal AI assistant that can be reached from chat apps, remember context, run tools, browse, use the shell, and perform background work. claw-dash aims for the useful subset of that experience that can be unlocked by enhancing Claude Code instead of replacing it.
 
 ## Who it's for
 
